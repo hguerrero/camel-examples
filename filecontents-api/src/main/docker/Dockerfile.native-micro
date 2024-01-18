@@ -41,6 +41,9 @@ RUN chown 1001 /work \
     && chown 1001:root /work
 COPY --chown=1001:root target/*-runner /work/application
 
+ENV FILE_PATH=/etc/files
+COPY --chown=185 files/ /etc/files
+
 EXPOSE 8080
 USER 1001
 
